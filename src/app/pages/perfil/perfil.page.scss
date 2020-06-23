@@ -1,0 +1,47 @@
+ion-content{
+
+    --ion-background-color: #515151 !important;
+}
+
+.logo{
+
+    margin-left: 2%;
+    width: 30%;
+    margin-top: 2%;
+   
+}
+.voltar{
+
+    font-family: lato;
+    color: #FAFF03;
+}
+
+
+.perfil{
+
+
+    font-size: 24px;
+    font-family: lato;
+    color: #FAFF03;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 22%;
+
+}
+
+.add{
+
+    width: 50px;
+}
+
+.btnadd{
+
+width:90px;
+height:90px;
+text-align:center;
+margin-left: 40%;
+margin-top: 5%;
+--border-radius: 50%;
+    
+}

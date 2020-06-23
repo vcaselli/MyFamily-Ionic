@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <img class="logo" src="assets/LogoNome.png">
+
+    <ion-buttons routerLink="/kid" routerDirection="back" class="voltar" slot="end">
+      <ion-button>
+        Voltar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="container ion-text-center titulo">
+    <span>
+        Conta Infantil
+    </span>
+  </div>
+
+  <div>
+    <span class="ion-text-center instrucoes">
+      As contas de criança podem ser criadas e gerenciadas a partir da conta de um dos pais ou tutor legal.
+    </span>
+  </div>
+
+  <div class="ion-text-center core">
+    <img src="assets/coracaoyelow.svg">
+  </div>
+  <div class="ion-text-center menina">
+    <img src="assets/menina.svg">
+  </div>
+  <div class="ion-text-center mae">
+    <img src="assets/mae.svg">
+  </div>
+
+  <div>
+    <span class="ion-text-center contaNew">
+      Pergunta para os pais ou tutor legal: Você já possui uma conta MyFamily ou quer criar uma nova?
+    </span>
+  </div>
+
+  <ion-button routerLink="/login" routerDirection="back" class="ion-text-center btnLogin">Já possuo uma conta</ion-button>
+  <ion-button routerLink="/singup"  class="ion-text-center btnCadastro">Criar uma nova conta</ion-button>
+</ion-content>

@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <img class="logo" src="assets/LogoNome.png">
+    <ion-buttons routerLink="/parental" routerDirection="back" class="voltar" slot="end">
+      <ion-button>
+        Voltar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="container ion-text-center titulo">
+    <span>
+        Criar conta MyFamily
+    </span>
+  </div>
+
+  <div class="container ion-text-center necessidade">
+    <span>
+        É necessário criar um perfil para acessar o app.
+    </span>
+  </div>
+  
+<div class="forms" >
+  {{msg}}
+  <ion-item>
+    <ion-input  pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" type="text" placeholder="Nome"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input  type="date" placeholder="Idade"></ion-input>
+  </ion-item>
+  <ion-label>Parentesco</ion-label>
+  <ion-select>
+    <ion-input  type="text"  placeholder="Parentesco"></ion-input>
+    <ion-select-option>Pai/Mãe</ion-select-option>
+  <ion-select-option>Filho/Filha</ion-select-option>
+  <ion-select-option>Tio/Tia</ion-select-option>
+  <ion-select-option>Avô/Avó</ion-select-option>
+  <ion-select-option>outros</ion-select-option>
+  </ion-select>
+  <ion-item>
+
+    <ion-checkbox  color="warning" slot="start"></ion-checkbox>
+    <ion-label>Responsável</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-input  type="password" minlength="3" maxlength="6" required placeholder="PIN do seu perfil"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-input  type="password" minlength="3" maxlength="6"  required placeholder="Confirme o PIN"></ion-input>
+  </ion-item>
+  <hr>
+  <ion-item>
+    <ion-input  type="password" minlength="3" maxlength="8" required
+      placeholder="Senha da conta principal"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input  type="password" minlength="3" maxlength="8" required
+      placeholder="Confirme a senha"></ion-input>
+  </ion-item>
+  
+</div>
+
+
+<ion-button (click)="finalizar()"  class="ion-text-center btnSeguir">Cadastrar</ion-button>
+
+</ion-content>

@@ -1,0 +1,46 @@
+
+<ion-content>
+
+  <div class="logo">
+    <img src="assets/LogoCompleta.svg">
+  </div>
+
+  <div class="ion-padding">
+    
+    <section>
+    <span class="ion-text-center titulo">Login</span>
+    </section>
+    
+    <ion-text class="ion-text-center err">{{msg}}</ion-text>
+
+  <div class="inputs">
+    
+    <ion-item class="ion-margin-top" color="light" lines="none">
+        <ion-input  type="text" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Login"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin-top" color="light" lines="none">
+      <ion-input  type="password" maxlenght="6" minlenght="3"  required placeholder="Senha"></ion-input>
+  </ion-item>
+  </div>
+  </div>
+  
+ 
+    <div class="container ion-text-center">
+
+    <ion-button (click)="login()" class="btnLogin">Entrar</ion-button>
+
+    <p >Esqueci minha senha!</p>
+
+    <span class="ion-text-center ou">OU</span>
+
+    <span class="ion-text-center cadastrar">Sua família ainda não é cadastrada?</span>
+    <ion-button (click)="singup()" class="btnCad">Cadastre-se</ion-button>
+
+      <span class="slogan">Família por todos, todos por um.</span>
+
+
+    </div>
+
+  
+
+</ion-content>

@@ -1,0 +1,58 @@
+
+.logo{
+
+    margin-left: 2%;
+    width: 30%;
+    margin-top: 2%;
+   
+}
+.voltar{
+
+    font-family: lato;
+    color: #FAFF03;
+}
+
+.titulo{
+
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 89%;
+   font-family: lato;
+   font-size: 22px;
+   font-weight: bold;
+   color: #515151;
+}
+
+.criancas{
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 52%;
+
+    .userKids{
+
+        font-size: 16px;
+        color: #515151;
+        font-family: lato;
+        
+
+    }
+}
+.adultos{
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 15%;
+
+    .userAdultos{
+
+        font-size: 16px;
+        color: #515151;
+        font-family: lato;
+        
+
+    }
+}

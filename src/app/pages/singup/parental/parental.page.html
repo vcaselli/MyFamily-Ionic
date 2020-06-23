@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <img class="logo" src="assets/LogoNome.png">
+    <ion-buttons (click)="exit()" class="voltar" slot="end">
+      <ion-button>
+        Sair
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="container ion-text-center">
+   <span class="titulo ion-text-center">Opções de Cadastro</span>
+  </div>
+
+  <div routerLink="/kid" class="criancas ion-text-center">
+    <img src="assets/criancas.svg">
+    <div class="ion-text-center">
+      <span class="userKids">Para usuários que são menores de 18 anos</span>
+    </div>
+  </div>
+
+  <div routerLink="/singup" class="adultos ion-text-center">
+    <img src="assets/adultos.svg">
+    <div class="ion-text-center">
+      <span class="userAdultos">Para usuários que são maiores de 18 anos</span>
+    </div>
+  </div>
+
+
+</ion-content>

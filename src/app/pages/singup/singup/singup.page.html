@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <img class="logo" src="assets/LogoNome.png">
+
+    <ion-buttons routerLink="/parental" routerDirection="back" class="voltar" slot="end">
+      <ion-button>
+        Voltar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="container ion-text-center titulo">
+    <span>
+      Criar conta MyFamily
+    </span>
+  </div>
+  <form class="forms" #fc="ngForm" (ngSubmit)="onSubmit(fc)">
+    <ion-item>
+      <ion-input  name="account.familyName" [(ngModel)]="account.familyName" type="text" minlength="5" maxlength="15"
+        pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" required placeholder="Nome da Família"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input   name="account.email" [(ngModel)]="account.email" type="email" required
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="E-mail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" minlength="15" required placeholder="Cidade"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" minlength="15" required placeholder="Estado"></ion-input>
+    </ion-item>
+    <ion-item>
+      <span class="ion-text-center termos" (click)="modalTermos()">Termos</span>
+    </ion-item>
+  </form>
+
+<ion-item class="ion-text-center termos">
+  <ion-label>Termos de privacidade</ion-label>
+  <ion-checkbox name="privacyPolicy" [(ngModel)]="privacyPolicy"></ion-checkbox>
+  
+</ion-item>
+  <ion-button (click)="next()" [disabled]="fc.invalid" class="ion-text-center btnSeguir">Próximo</ion-button>
+<ion-label class="ion-text-center policy">{{msg}}</ion-label>
+</ion-content>
