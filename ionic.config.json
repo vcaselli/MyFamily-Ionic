@@ -1,0 +1,7 @@
+{
+  "name": "newfamily",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
