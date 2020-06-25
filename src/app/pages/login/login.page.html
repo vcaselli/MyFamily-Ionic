@@ -10,16 +10,16 @@
       <span class="ion-text-center titulo">Login</span>
     </section>
 
-    <ion-text class="ion-text-center err">{{msg}}</ion-text>
+    <ion-text class="ion-text-center err">{{errorMsg}}</ion-text>
 
     <div class="inputs">
 
       <ion-item class="ion-margin-top" color="light" lines="none">
-        <ion-input type="text" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Login">
+        <ion-input type="text" name="cred.email" [(ngModel)]="cred.email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Login">
         </ion-input>
       </ion-item>
       <ion-item class="ion-margin-top" color="light" lines="none">
-        <ion-input type="password" maxlenght="6" minlenght="3" required placeholder="Senha"></ion-input>
+        <ion-input type="password" name="cred.password" [(ngModel)]="cred.password" maxlenght="6" minlenght="3" required placeholder="Senha"></ion-input>
       </ion-item>
     </div>
   </div>

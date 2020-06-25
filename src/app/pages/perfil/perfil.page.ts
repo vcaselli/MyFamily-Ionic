@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { StorageService } from 'src/app/services/storageService';
 
 @Component({
   selector: 'app-perfil',
@@ -9,13 +10,15 @@ import { NavController } from '@ionic/angular';
 export class PerfilPage implements OnInit {
 
   constructor(
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private storage: StorageService
   ) { }
 
   ngOnInit() {
   }
 
-  exit() {
+  async exit() {
+    await this.storage.setLocalUser(null)
     this.navCtrl.navigateBack('/login')
   }
 
