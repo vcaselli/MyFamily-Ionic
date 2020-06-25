@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -9,31 +9,58 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProfilePage implements OnInit {
 
-firstPartAccount: any
-fullAccount = {
-  familyName: "", 
-  email: "", 
-  password: ""
-}
-
+  dataPage = []
+  fullAccount: any = []
+  profile = {
+    fullName: "",
+    birthDate: "",
+    kinship: "",
+    parentalControl: "",
+    pin: ""
+  }
+  pinConfirmation: String = null
+  passwordConfirmation: String = null
 
   constructor(
-    private route: ActivatedRoute
-    
+    private route: ActivatedRoute, 
+    private router: Router
+
   ) { }
 
   ngOnInit() {
-    this.firstPartAccount = this.route.queryParams.subscribe(params =>{ 
-      this.fullAccount.familyName = params.familyName
-      this.fullAccount.email = params.email
-      console.log(this.fullAccount)
+    //receiving data from other page called 'SingUp'
+    this.route.queryParams.subscribe(params => {
+      this.dataPage.push(params)
 
     })
+    //this is the main variable to send to our server later
+    this.fullAccount = [...this.dataPage]
 
- 
-  
+
   }
 
+  //post method of main account
+  finishFullAccount(){ 
+    if(this.passComparetor() == true){ 
+      this.router.navigate['/']
+
+    }else{ 
+
+    }
+  
+
+  }
+
+  finishProfile(){ 
+
+  }
+
+  passComparetor(){ 
+    if(this.fullAccount.password == this.passwordConfirmation && this.profile.pin == this.pinConfirmation){
+
+      return true
+    }
+  }
 
 
 

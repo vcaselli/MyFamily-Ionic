@@ -12,7 +12,8 @@ export class SingupPage implements OnInit {
 
   account: any = {
     familyName: "",
-    email: ""
+    email: "",
+    password: ""
   }
 
 privacyPolicy: boolean = false
