@@ -16,7 +16,7 @@ export class PolicyPage implements OnInit {
   }
 
 
-  exit(){ 
-this.modalCtrl.dismiss()
+  exit() {
+    this.modalCtrl.dismiss()
   }
 }

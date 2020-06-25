@@ -16,8 +16,8 @@ export class SingupPage implements OnInit {
     password: ""
   }
 
-privacyPolicy: boolean = false
-msg: string = ""
+  privacyPolicy: boolean = false
+  msg: string = ""
 
   constructor(
     private router: Router,
@@ -25,24 +25,24 @@ msg: string = ""
   ) { }
 
   ngOnInit() {
-    
+
   }
 
 
 
   next() {
-    if(this.privacyPolicy == true){
-    let navigationExtras: NavigationExtras = {
-      queryParams: this.account
-    
+    if (this.privacyPolicy == true) {
+      let navigationExtras: NavigationExtras = {
+        queryParams: this.account
+
+      }
+
+
+      this.router.navigate(['/profile'], navigationExtras)
+    } else {
+      this.msg = "Você não aceitou os termos"
     }
-   
-    
-    this.router.navigate(['/profile'], navigationExtras)
-  }else{ 
-    this.msg = "You did not accept our policy terms"
-  }
-    
+
   }
 
   async modalTermos() {

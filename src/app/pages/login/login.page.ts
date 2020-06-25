@@ -15,12 +15,12 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  login(){ 
+  login() {
     this.router.navigate(['/perfil'])
 
   }
 
-  singup(){ 
+  singup() {
     this.router.navigate(['/parental'])
   }
 

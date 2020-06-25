@@ -13,24 +13,23 @@
 
 <ion-content>
 
- <ion-fab horizontal="end" vertical="bottom" slot="fixed">
-  <img (click)="addperfil()" class="add" src="assets/add.svg"> 
-</ion-fab>
- 
- <div *ngFor="let membro of membro">
-      <ion-button (click)="home(membro)" class="ion-button ion-text-center btnadd" >
-        <p>{{membro.nome}}</p>
-      </ion-button >
- </div>"
- 
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <img (click)="addperfil()" class="add" src="assets/add.svg">
+  </ion-fab>
+
+  <div *ngFor="let membro of membro">
+    <ion-button (click)="home(membro)" class="ion-button ion-text-center btnadd">
+      <p>{{membro.nome}}</p>
+    </ion-button>
+  </div>"
+
 
 </ion-content>
 
 <style>
-  .reload{ 
+  .reload {
     width: 10%;
     margin-left: 25%;
-    
-  }
 
+  }
 </style>

@@ -22,7 +22,7 @@ export class ProfilePage implements OnInit {
   passwordConfirmation: String = null
 
   constructor(
-    private route: ActivatedRoute, 
+    private route: ActivatedRoute,
     private router: Router
 
   ) { }
@@ -40,23 +40,23 @@ export class ProfilePage implements OnInit {
   }
 
   //post method of main account
-  finishFullAccount(){ 
-    if(this.passComparetor() == true){ 
+  finishFullAccount() {
+    if (this.passComparetor() == true) {
       this.router.navigate['/']
 
-    }else{ 
+    } else {
 
     }
-  
+
 
   }
 
-  finishProfile(){ 
+  finishProfile() {
 
   }
 
-  passComparetor(){ 
-    if(this.fullAccount.password == this.passwordConfirmation && this.profile.pin == this.pinConfirmation){
+  passComparetor() {
+    if (this.fullAccount.password == this.passwordConfirmation && this.profile.pin == this.pinConfirmation) {
 
       return true
     }

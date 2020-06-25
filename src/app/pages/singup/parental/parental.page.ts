@@ -17,8 +17,8 @@ export class ParentalPage implements OnInit {
   ngOnInit() {
   }
 
-  exit(){ 
-this.navCtrl.navigateBack('/login')
+  exit() {
+    this.navCtrl.navigateBack('/login')
   }
 
 }
