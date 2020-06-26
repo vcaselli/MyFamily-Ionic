@@ -4,7 +4,7 @@ export interface MemberDTO{
     gender: String, 
     familyRelationship: String, 
     points: number, 
-    parantalControl: number,
+    parentalControl: number,
     pin: number
 
 }

@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AccountService } from 'src/app/services/domain/accountService';
+import { MemberService } from 'src/app/services/domain/memberService';
+import { MemberDTO } from 'src/app/models/memberDTO';
+import { Auth } from 'src/app/services/auth';
+import { AccountDTO } from 'src/app/models/accountDTO';
+import { CredencialsDTO } from 'src/app/models/credencialsDTO';
+import { ThrowStmt } from '@angular/compiler';
 
 
 @Component({
@@ -10,20 +17,27 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ProfilePage implements OnInit {
 
   dataPage = []
-  fullAccount: any = []
-  profile = {
+  fullAccount;
+
+  profile: MemberDTO = {
     fullName: "",
     birthDate: "",
-    kinship: "",
-    parentalControl: "",
-    pin: ""
+    gender: "",
+    points: null,
+    familyRelationship: "",
+    parentalControl: 0,
+    pin: null
   }
-  pinConfirmation: String = null
+
+  pinConfirmation: number = null
   passwordConfirmation: String = null
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private as: AccountService, 
+    private ms: MemberService, 
+    private auth: Auth
 
   ) { }
 
@@ -34,25 +48,35 @@ export class ProfilePage implements OnInit {
 
     })
     //this is the main variable to send to our server later
-    this.fullAccount = [...this.dataPage]
-
-
+    this.fullAccount = [...this.dataPage] as unknown as AccountDTO   
   }
 
   //post method of main account
   finishFullAccount() {
     if (this.passComparetor() == true) {
-      this.router.navigate['/']
+      this.as.post(this.fullAccount[0])
+      .subscribe(response => { 
+        let body = response.body
+        this.finishProfile(body.charAt(6))
+      
+      })
+
 
     } else {
 
     }
-
-
   }
 
-  finishProfile() {
-
+  //post method of member profile
+  finishProfile(id) {
+    this.ms.post(this.profile, id)
+    .subscribe(response => { 
+      console.log(this.profile)
+      this.loginAfterAccountRegistration(this.fullAccount[0])
+      console.log(response)
+    
+    }) 
+    
   }
 
   passComparetor() {
@@ -63,5 +87,12 @@ export class ProfilePage implements OnInit {
   }
 
 
+loginAfterAccountRegistration({email, password}){ 
+  let creds: CredencialsDTO = {email, password}
+  this.auth.login(creds).subscribe(response =>{
+    this.router.navigate(['/perfil'])
+ 
+  })
+}
 
 }

@@ -27,10 +27,10 @@
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="E-mail"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="text" minlength="15" required placeholder="Cidade"></ion-input>
+      <ion-input name="account.district" [(ngModel)]="account.district" type="text" minlength="4" required placeholder="Cidade"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="text" minlength="15" required placeholder="Estado"></ion-input>
+      <ion-input name="account.state" [(ngModel)]="account.state" type="text" minlength="4" required placeholder="Estado"></ion-input>
     </ion-item>
     <ion-item>
       <span class="ion-text-center termos" (click)="modalTermos()">Termos</span>

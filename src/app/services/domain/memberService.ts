@@ -10,9 +10,9 @@ export class MemberService{
         private http: HttpClient
     ){ }
     
-    post(data: MemberDTO){
-        this.http.post(
-            `${API_CONFIG.baseUrl}/membros`,
+    post(data: MemberDTO, id: String){
+      return  this.http.post(
+            `${API_CONFIG.baseUrl}/membros/account/${id}`,
             data, { 
                 observe: 'response',
                 responseType: 'text'

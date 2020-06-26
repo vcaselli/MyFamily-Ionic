@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { PolicyPage } from '../../modal/policy/policy.page';
 import { ModalController } from '@ionic/angular';
+import { AccountDTO } from 'src/app/models/accountDTO';
 
 @Component({
   selector: 'app-singup',
@@ -10,10 +11,12 @@ import { ModalController } from '@ionic/angular';
 })
 export class SingupPage implements OnInit {
 
-  account: any = {
+  account: AccountDTO = {
     familyName: "",
     email: "",
-    password: ""
+    password: "", 
+    state: "",
+    district: ""
   }
 
   privacyPolicy: boolean = false
@@ -29,7 +32,7 @@ export class SingupPage implements OnInit {
   }
 
 
-
+  //this method stores data information about the first step of registration account and send to next page
   next() {
     if (this.privacyPolicy == true) {
       let navigationExtras: NavigationExtras = {
