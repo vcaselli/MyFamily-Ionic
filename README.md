@@ -11,7 +11,7 @@ MyFamilyApp is an application to your family, a game style application that prov
 
 ### Developers
 * Victor D. Caselli  - Front-end and Back-end features
-Linkedin: https://www.linkedin.com/in/victor-dias-09636a18b/
+* Linkedin: https://www.linkedin.com/in/victor-dias-09636a18b/
 * Matheus Bastos - UX/UI Design and Front-end features
 * Linkedin: https://www.linkedin.com/in/matheus-de-lemos-197916175/
 
