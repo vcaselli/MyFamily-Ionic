@@ -3,6 +3,7 @@ import { NavController } from '@ionic/angular';
 import { StorageService } from 'src/app/services/storageService';
 import { AccountService } from 'src/app/services/domain/accountService';
 import { AccountDTO } from 'src/app/models/accountDTO';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -11,15 +12,20 @@ import { AccountDTO } from 'src/app/models/accountDTO';
 })
 export class PerfilPage implements OnInit {
 
+  user;
+  profiles;
+ 
+
   constructor(
     private navCtrl: NavController,
-    private storage: StorageService, 
-    private as: AccountService
+    private storage: StorageService,
+    private as: AccountService,
+    private router: Router
   ) { }
 
   ngOnInit() {
-    this.as.load()
-   
+    this.load()
+
   }
 
   async exit() {
@@ -27,7 +33,23 @@ export class PerfilPage implements OnInit {
     this.navCtrl.navigateBack('/login')
   }
 
-  
+  //this method returns all information from main account
+  load() {
+    let localUser = this.storage.getLocalUser()
+    if (localUser && localUser.email) {
+      this.as.findByEmail(localUser.email)
+        .subscribe(response => {
+          this.user = response as AccountDTO
+          this.profiles = this.user.profiles;
+
+
+        }, error => {
+          this.router.navigate(['/'])
+
+        })
+    }
+  }
+
   
 
 }

@@ -39,6 +39,10 @@ const routes: Routes = [
     path: 'policy',
     loadChildren: () => import('./pages/modal/policy/policy.module').then( m => m.PolicyPageModule)
   },
+  {
+    path: 'new-profile',
+    loadChildren: () => import('./pages/new-profile/new-profile.module').then( m => m.NewProfilePageModule)
+  },
 ];
 
 @NgModule({

@@ -14,12 +14,12 @@
 <ion-content>
 
   <ion-fab horizontal="end" vertical="bottom" slot="fixed">
-    <img (click)="addperfil()" class="add" src="assets/add.svg">
+    <img routerLink="/new-profile" routerDirection="forward" class="add" src="assets/add.svg">
   </ion-fab>
 
-  <div *ngFor="let membro of membro">
-    <ion-button (click)="home(membro)" class="ion-button ion-text-center btnadd">
-      <p>{{membro.nome}}</p>
+  <div *ngFor="let p of profiles">
+    <ion-button   class="ion-button ion-text-center btnadd">
+      <p>{{p.fullName}}</p>
     </ion-button>
   </div>"
 

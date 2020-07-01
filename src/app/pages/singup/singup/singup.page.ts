@@ -12,6 +12,7 @@ import { AccountDTO } from 'src/app/models/accountDTO';
 export class SingupPage implements OnInit {
 
   account: AccountDTO = {
+    id: null,
     familyName: "",
     email: "",
     password: "56",

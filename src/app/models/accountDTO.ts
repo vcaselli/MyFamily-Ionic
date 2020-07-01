@@ -1,4 +1,5 @@
 export interface AccountDTO {
+    id: String,
     familyName: String,
     email: String,
     password: String,

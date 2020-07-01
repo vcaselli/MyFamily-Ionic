@@ -30,21 +30,6 @@ export class AccountService {
 
     }
 
-    //this method returns all information from main account
-    load() {
-        let localUser = this.storage.getLocalUser()
-        if (localUser && localUser.email) {
-            this.findByEmail(localUser.email)
-                .subscribe(response => {
-                    //console.log(response)
-
-                }, error => {
-                    this.router.navigate(['/'])
-
-                })
-        }
-    }
-
     //insert a new account 
     post(data: AccountDTO) {
         return this.http.post(
