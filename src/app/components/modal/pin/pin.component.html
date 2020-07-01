@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <img class="logo" src="assets/LogoNome.png">
+    <ion-buttons (click)="close()" class="voltar" slot="end">
+      <ion-button>
+        Voltar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+  <div class="container ion-text-center titulo">
+      
+    <span>
+        Digite o seu PIN:
+    </span>
+  </div>
+  
+  <p class="ion-text-center p1">É necessário seu PIN para acessar o perfil.</p>
+
+  <p class="ion-text-center p2" (click)="esqueceusenha()">Esqueci meu PIN!</p>
+
+  <div class="forms">
+      <p style="text-align: center; color:red">{{errorMsg}}</p>
+    <ion-item>
+      <ion-input name="pin" [(ngModel)]="pin" type="password" placeholder="PIN"></ion-input>
+    </ion-item>
+  </div>
+
+  <ion-button (click)="pinController()" class="ion-text-center btnSeguir">Entrar</ion-button>
+
+</ion-content>

@@ -21,4 +21,11 @@ export class MemberService{
 
     }
 
+    findById(id: String){ 
+        return this.http.get(
+            `${API_CONFIG.baseUrl}/profiles/${id}`
+        )
+
+    }
+
 }

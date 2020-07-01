@@ -17,7 +17,8 @@ export class SingupPage implements OnInit {
     email: "",
     password: "56",
     state: "",
-    city: ""
+    city: "",
+    profiles: null
   }
 
   privacyPolicy: boolean = false

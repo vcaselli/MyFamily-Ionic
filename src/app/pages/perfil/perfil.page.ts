@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ModalController } from '@ionic/angular';
 import { StorageService } from 'src/app/services/storageService';
 import { AccountService } from 'src/app/services/domain/accountService';
 import { AccountDTO } from 'src/app/models/accountDTO';
 import { Router } from '@angular/router';
+import { PinComponent } from 'src/app/components/modal/pin/pin.component';
 
 @Component({
   selector: 'app-perfil',
@@ -20,8 +21,11 @@ export class PerfilPage implements OnInit {
     private navCtrl: NavController,
     private storage: StorageService,
     private as: AccountService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private modalController: ModalController
+  ) { 
+    
+  }
 
   ngOnInit() {
     this.load()
@@ -49,6 +53,20 @@ export class PerfilPage implements OnInit {
         })
     }
   }
+
+
+  async pin(id: string) {
+    let name = "victor"
+    const modal = await this.modalController.create({
+      component: PinComponent,
+      cssClass: 'Pin-component.scss', 
+      componentProps: { 
+        'id': id
+      }
+    });
+    return await modal.present();
+  }
+
 
   
 

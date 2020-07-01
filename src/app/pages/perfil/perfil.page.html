@@ -18,10 +18,11 @@
   </ion-fab>
 
   <div *ngFor="let p of profiles">
-    <ion-button   class="ion-button ion-text-center btnadd">
+    <ion-button (click)="pin(p.id)"  class="ion-button ion-text-center btnadd">
       <p>{{p.firstName}}</p>
     </ion-button>
   </div>"
+
 
 
 </ion-content>

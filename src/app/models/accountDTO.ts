@@ -4,5 +4,6 @@ export interface AccountDTO {
     email: String,
     password: String,
     state: String,
-    city: String
+    city: String,
+    profiles: null
 }
