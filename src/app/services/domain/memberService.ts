@@ -12,7 +12,7 @@ export class MemberService{
     
     post(data: MemberDTO, id: String){
       return  this.http.post(
-            `${API_CONFIG.baseUrl}/membros/account/${id}`,
+            `${API_CONFIG.baseUrl}/profiles/${id}`,
             data, { 
                 observe: 'response',
                 responseType: 'text'

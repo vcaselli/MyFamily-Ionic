@@ -17,7 +17,14 @@ import { ThrowStmt } from '@angular/compiler';
 export class ProfilePage implements OnInit {
 
   dataPage = []
-  fullAccount;
+  fullAccount: AccountDTO = { 
+    familyName: "", 
+    state: "",
+    city: "",
+    email: "",
+    password: ""
+  }
+ 
 
   profile: MemberDTO = {
     fullName: "",
@@ -25,7 +32,7 @@ export class ProfilePage implements OnInit {
     gender: "",
     points: null,
     familyRelationship: "",
-    parentalControl: 0,
+    parentalControl: [3],
     pin: null
   }
 
@@ -48,13 +55,15 @@ export class ProfilePage implements OnInit {
 
     })
     //this is the main variable to send to our server later
-    this.fullAccount = [...this.dataPage] as unknown as AccountDTO   
+   this.fullAccount = {...this.dataPage[0], password:""}
+    
   }
 
   //post method of main account
   finishFullAccount() {
+    console.log(this.profile)
     if (this.passComparetor() == true) {
-      this.as.post(this.fullAccount[0])
+      this.as.post(this.fullAccount)
       .subscribe(response => { 
         let body = response.body
         this.finishProfile(body.charAt(6))
@@ -72,7 +81,7 @@ export class ProfilePage implements OnInit {
     this.ms.post(this.profile, id)
     .subscribe(response => { 
       console.log(this.profile)
-      this.loginAfterAccountRegistration(this.fullAccount[0])
+      this.loginAfterAccountRegistration(this.fullAccount)
       console.log(response)
     
     }) 

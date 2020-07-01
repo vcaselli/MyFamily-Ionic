@@ -14,9 +14,9 @@ export class SingupPage implements OnInit {
   account: AccountDTO = {
     familyName: "",
     email: "",
-    password: "", 
+    password: "56",
     state: "",
-    district: ""
+    city: ""
   }
 
   privacyPolicy: boolean = false
