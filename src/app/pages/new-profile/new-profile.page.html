@@ -20,7 +20,7 @@
 
   <form class="forms" #fc="ngForm" (ngSubmit) = "onSubmit(fc)">
     <ion-item>
-      <ion-input name="data.fullName" [(ngModel)]="data.fullName" type="text"  pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" minlength="4" required placeholder="Nome"></ion-input>
+      <ion-input name="data.firstName" [(ngModel)]="data.firstName" type="text"  pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" minlength="4" required placeholder="Nome"></ion-input>
     </ion-item>
     <ion-item>
       <ion-input name="data.birthDate" [(ngModel)]="data.birthDate"  type="date" required placeholder="Idade"></ion-input>

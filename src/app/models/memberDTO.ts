@@ -1,5 +1,5 @@
 export interface MemberDTO{ 
-    fullName: String,
+    firstName: String,
     birthDate: String, 
     gender: String, 
     familyRelationship: String, 

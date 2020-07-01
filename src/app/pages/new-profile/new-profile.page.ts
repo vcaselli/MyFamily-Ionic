@@ -17,7 +17,7 @@ export class NewProfilePage implements OnInit {
 
 
   data: MemberDTO = {
-    fullName: "",
+    firstName: "",
     birthDate: "",
     gender: "",
     familyRelationship: "",
@@ -50,7 +50,10 @@ export class NewProfilePage implements OnInit {
   new() {
 
 this.service.post(this.data,this.id).subscribe(response =>{ 
-  this.router.navigate(['/perfil'])
+  this.router.navigate(['/perfil']).then(response => { 
+    location.reload()
+  })
+  
 })
     
   }
