@@ -4,6 +4,7 @@ import { MemberService } from 'src/app/services/domain/memberService';
 import { AccountService } from 'src/app/services/domain/accountService';
 import { StorageService } from 'src/app/services/storageService';
 import { MemberDTO } from 'src/app/models/memberDTO';
+import { iif } from 'rxjs';
 
 @Component({
   selector: 'app-new-profile',
@@ -13,7 +14,8 @@ import { MemberDTO } from 'src/app/models/memberDTO';
 export class NewProfilePage implements OnInit {
 
   id;
-
+  pin
+  errorMsg
 
 
   data: MemberDTO = {
@@ -38,30 +40,44 @@ export class NewProfilePage implements OnInit {
   }
 
 
-  findId(){
+  findId() {
     this.account.findByEmail(
       this.storage.getLocalUser().email
-    ).subscribe(response =>{ 
-     this.id = response.id
+    ).subscribe(response => {
+      this.id = response.id
     })
-   }
-  
+  }
+
 
   new() {
+    this.service.post(this.data, this.id).subscribe(response => {
+      this.router.navigate(['/perfil']).then(response => {
+        location.reload()
+      })
 
-this.service.post(this.data,this.id).subscribe(response =>{ 
-  this.router.navigate(['/perfil']).then(response => { 
-    location.reload()
-  })
-  
-})
-    
-  }
-
- 
-
+    })
 
   }
+
+
+pinComparator(){ 
+  if(this.pin == this.data.pin && this.pin != null && this.data.pin
+    != null){ 
+    return true
+  }
+  return false
+}
+
+
+add(){ 
+  if(this.pinComparator() == true){ 
+   return  this.new()
+  }
+  return this.errorMsg = "confirmação de pin diferente ou pins vazios"
+}
+
+
+}
 
 
 

@@ -18,16 +18,18 @@ export class ProfilePage implements OnInit {
 
   dataPage = []
   fullAccount: AccountDTO = { 
+    id: null,
     familyName: "", 
     state: "",
     city: "",
     email: "",
-    password: ""
+    password: "",
+    profiles: null
   }
  
 
   profile: MemberDTO = {
-    fullName: "",
+    firstName: "",
     birthDate: "",
     gender: "",
     points: null,
@@ -90,7 +92,7 @@ export class ProfilePage implements OnInit {
 
   passComparetor() {
     if (this.fullAccount.password == this.passwordConfirmation && this.profile.pin == this.pinConfirmation) {
-
+      
       return true
     }
   }

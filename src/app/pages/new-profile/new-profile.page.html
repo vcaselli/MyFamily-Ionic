@@ -19,8 +19,9 @@
 
 
   <form class="forms" #fc="ngForm" (ngSubmit) = "onSubmit(fc)">
+    <ion-label class="ion-text-center err">{{errorMsg}}</ion-label>
     <ion-item>
-      <ion-input name="data.firstName" [(ngModel)]="data.firstName" type="text"  pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" minlength="4" required placeholder="Nome"></ion-input>
+      <ion-input name="data.firstName" [(ngModel)]="data.firstName" maxlength="10" type="text"  pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" minlength="4" required placeholder="Nome"></ion-input>
     </ion-item>
     <ion-item>
       <ion-input name="data.birthDate" [(ngModel)]="data.birthDate"  type="date" required placeholder="Idade"></ion-input>
@@ -40,15 +41,15 @@
         <ion-select-option>outros</ion-select-option>
     </ion-select>
     <ion-item>
-      <ion-input  type="password" name="data.pin" [(ngModel)]="data.pin"   minlength="3" maxlength="6" required pattern="[0-9]+$"  required placeholder="PIN"></ion-input>
+      <ion-input  type="password" name="data.pin" [(ngModel)]="data.pin"   minlength="4" maxlength="6" required pattern="[0-9]+$"  required placeholder="PIN"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="password"   minlength="3" maxlength="6" pattern="[0-9]+$" required placeholder="Confirme o PIN"></ion-input>
+      <ion-input type="password"  name="pin" [(ngModel)]="pin" minlength="4" maxlength="6" pattern="[0-9]+$" required placeholder="Confirme o PIN"></ion-input>
     </ion-item>
    
   </form>
   
   
-  <ion-button (click)="new()"  class="ion-text-center btnSeguir">Adicionar</ion-button>
+  <ion-button (click)="add()"  [disabled]="fc.invalid" class="ion-text-center btnSeguir">Adicionar</ion-button>
 
 </ion-content>

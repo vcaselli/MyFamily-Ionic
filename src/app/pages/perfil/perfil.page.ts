@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ModalController } from '@ionic/angular';
+import { NavController, ModalController, AlertController } from '@ionic/angular';
 import { StorageService } from 'src/app/services/storageService';
 import { AccountService } from 'src/app/services/domain/accountService';
 import { AccountDTO } from 'src/app/models/accountDTO';
@@ -22,7 +22,8 @@ export class PerfilPage implements OnInit {
     private storage: StorageService,
     private as: AccountService,
     private router: Router,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private alertCtrl: AlertController
   ) { 
     
   }
@@ -68,6 +69,25 @@ export class PerfilPage implements OnInit {
   }
 
 
-  
+newProfile(){ 
+  if(this.profiles.length < 5){ 
+   return this.router.navigate(['/new-profile'])
+  }
+  return this.alert()
+}  
+
+async alert(){ 
+  const alert = await this.alertCtrl.create({ 
+    header: "Máximo de perfis", 
+    message: "Sua família atingiu o máximo de perfis permitidos",
+    buttons: [{
+      text: "Fechar", 
+      role: "Fechar"
+    }]
+  })
+  alert.present()
+}
+
+
 
 }

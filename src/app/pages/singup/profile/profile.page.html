@@ -23,7 +23,8 @@
     </span>
   </div>
 
-  <div class="forms">
+  <form class="forms" #fc="ngForm" (ngSubmit) = "onSubmit(fc)">
+
     {{msg}}
     <ion-item>
       <ion-input name="profile.fullName" [(ngModel)]="profile.fullName"
@@ -47,27 +48,26 @@
       <ion-label>Responsável</ion-label>
     </ion-item>
     <ion-item>
-      <ion-input name="profile.pin" [(ngModel)]="profile.pin" type="password" minlength="3" maxlength="6" required
+      <ion-input name="profile.pin" [(ngModel)]="profile.pin" type="password" minlength="4" maxlength="4" required
         placeholder="PIN do seu perfil"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input name="pinConfirmation" [(ngModel)]="pinConfirmation" type="password" minlength="3" maxlength="6"
+      <ion-input name="pinConfirmation" [(ngModel)]="pinConfirmation" type="password" minlength="4" maxlength="4"
         required placeholder="Confirme o PIN"></ion-input>
     </ion-item>
     <hr>
     <ion-item>
-      <ion-input name="fullAccount.password" [(ngModel)]="fullAccount.password" type="password" minlength="3"
+      <ion-input name="fullAccount.password" [(ngModel)]="fullAccount.password" type="password" minlength="8"
         maxlength="8" required placeholder="Senha da conta principal"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input name="passwordConfirmation" [(ngModel)]="passwordConfirmation" type="password" minlength="3"
+      <ion-input name="passwordConfirmation" [(ngModel)]="passwordConfirmation" type="password" minlength="8"
         maxlength="8" required placeholder="Confirme a senha"></ion-input>
     </ion-item>
 
-  </div>
+</form>
 
-
-  <ion-button (click)="finishFullAccount()" class="ion-text-center btnSeguir">Cadastrar</ion-button>
+  <ion-button  [disabled]="fc.invalid" (click)="finishFullAccount()" class="ion-text-center btnSeguir">Cadastrar</ion-button>
 
 </ion-content>

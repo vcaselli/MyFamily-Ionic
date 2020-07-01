@@ -13,7 +13,7 @@ import { NewProfilePage } from './new-profile.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    NewProfilePageRoutingModule
+    NewProfilePageRoutingModule,
   ],
   declarations: [NewProfilePage]
 })
