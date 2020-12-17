@@ -1,7 +1,8 @@
 # MyFamilyApp
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/vcaselli/MyFamily-ionic/blob/master/LICENSE) 
 >On Development
 >Ionic 6.10.1
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/vcaselli/MyFamily-ionic/blob/master/LICENSE) 
+
 
 ## Application's proposes
 MyFamilyApp is an application to your family, a game style application that provides household chores and points reward.
